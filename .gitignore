@@ -160,3 +160,5 @@ package-lock.json
 
 # Ignoring vs code settings
 .vscode/
+
+.vercel
