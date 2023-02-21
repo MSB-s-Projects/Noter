@@ -1,11 +1,25 @@
-export default function Note() {
+export default function Note({
+	title,
+	content,
+	id,
+	deleteNote,
+}: {
+	title: string
+	content: string
+	id: number
+	deleteNote: Function
+}) {
+	function handleClick() {
+		deleteNote((prevValue: any) => prevValue.filter((note: any, index: number) => index !== id))
+	}
+
 	return (
 		<div className='card w-96 bg-base-100 shadow-md shadow-primary'>
 			<div className='card-body'>
-				<h2 className='card-title'>Note Title</h2>
-				<p>Note Content ...</p>
+				<h2 className='card-title'>{title}</h2>
+				<p>{content}</p>
 				<div className='card-actions justify-end'>
-					<button title='delete' className='btn btn-square btn-sm'>
+					<button title='delete' className='btn btn-square btn-sm' onClick={handleClick}>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
 							className='h-6 w-6'
