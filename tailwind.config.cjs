@@ -13,7 +13,8 @@ module.exports = {
 		logs: true,
 		rtl: false,
 		prefix: '',
-		darkTheme: 'halloween',
+		darkTheme: 'dracula',
+		lightTheme: 'pastel',
 	},
 }
 
